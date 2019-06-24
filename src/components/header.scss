@@ -1,0 +1,21 @@
+.navbar {
+  font-size: 1.5rem;
+  padding: 2rem 0;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.navbar-menu {
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    li {
+      list-style-type: none;
+      display: inline;
+    }
+  }
+}

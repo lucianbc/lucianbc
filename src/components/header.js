@@ -2,28 +2,33 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div className='container'>
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+import "./header.scss"
+
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    }
+
+  render() {
+    return (
+      <header className='navbar'>
+        <div className='container columns'>
+          <div className='navbar-brand column'>
+            <Link className='navbar-item' to="/">LUCIAN BOACĂ</Link>
+          </div>
+          <nav className='navbar-menu column'>
+            <ul>
+              <li><a href="#home" className='navbar-item'>Home</a></li>
+              <li><a href="#experience" className='navbar-item'>Experience</a></li>
+              <li><a href="#projects" className='navbar-item'>Projects</a></li>
+              <li><a href="#contact" className='navbar-item'>Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    );
+  }
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
