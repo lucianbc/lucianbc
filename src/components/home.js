@@ -15,7 +15,7 @@ export default () => (
         <Links />
       </div>
       <div className='column'>
-        <img className='hero' src={coderImg}/>
+        <img className='hero' src={coderImg} alt="Illustration"/>
       </div>
     </div>
   </main>

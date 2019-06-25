@@ -1,0 +1,99 @@
+#experience {
+  background-color: #302C76;
+  position: relative;
+  color: white;
+  
+  &:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "";
+    background-color:rgba(0, 0, 0, 0.3);
+    // mask: url('../assets/topography.svg');
+    mask: url('../assets/circuit-board.svg');
+  }
+
+  .column {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &:after {
+      position: absolute;
+      background-color: white;
+      content: "";
+      height: 80%;
+      width: 1px;
+
+      @media (max-width: 575px) {
+        width: 80%;
+        height: 1px;
+      }
+    }
+    >div {
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 3rem;
+      >div {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+
+        >* {
+          margin-bottom: 2rem;
+        }
+
+        >*:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .column:first-child {
+    &:after {
+      right: 0;      
+
+      @media (max-width: 575px) {
+        bottom: 0;
+        right: inherit;
+      }
+    }
+  }
+
+  .column:nth-child(2) {
+    &:after {
+      left: 0;
+
+      @media (max-width: 575px) {
+        top: 0;
+        left: inherit;
+      }
+    }
+  }
+
+  .item {
+    width: 130px;
+    height: 130px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 100%;
+    &:hover {
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+      transform: scale(1.05);
+      transition: all .2s;
+    }
+    img {
+      width: 100%;
+      border-radius: 100%;
+    }
+  }
+}
