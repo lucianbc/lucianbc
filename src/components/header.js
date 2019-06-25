@@ -11,7 +11,7 @@ class Header extends React.Component {
 
   render() {
     return (
-      <header className='navbar'>
+      <header className='navbar text-1'>
         <div className='container columns'>
           <div className='navbar-brand column'>
             <Link className='navbar-item' to="/">LUCIAN BOACĂ</Link>

@@ -1,0 +1,55 @@
+.contour {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  -webkit-transition: stroke-dashoffset 1s;
+  transition: stroke-dashoffset 1s;
+}
+
+.anim-btn:hover .contour {
+  stroke-dashoffset: 0 !important;
+}
+
+.media-btn {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  position: relative;
+}
+
+.media-btn svg {
+  height: 100%;
+}
+
+.iconContainer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+  }
+}
+
+#gitHub {
+  img {
+    width: 80%;
+  }
+}
+
+#linkedIn {
+  img {
+    width: 60%;
+    margin-top: -3px;
+  }
+}
+
+.links {
+  a {
+    margin-right: 0.5rem;
+  }
+}
