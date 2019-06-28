@@ -30,7 +30,7 @@ const Layout = ({ children }) => {
     <>
       <SEO title={data.site.siteMetadata.title} />
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div>{children}</div>
+      <div id="main">{children}</div>
       <footer>
           © {new Date().getFullYear()}, Built with
           {` `}

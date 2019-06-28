@@ -6,6 +6,8 @@ import imgUb from "../assets/unibuc.png"
 import imgGtl from "../assets/gtl.jpeg"
 import imgAmz from "../assets/logo-amazon-square.jpg"
 
+import Item from "./experienceItem"
+
 export default () => (
   <section id="experience">
     <div className='container columns'>
@@ -16,9 +18,7 @@ export default () => (
           </h2>
 
           <div>
-            <div className='item'>
-              <img src={imgUb} alt="Logo Unibuc"/>
-            </div>  
+            <Item imgUrl={imgUb} alt="Logo Unibuc" />
           </div>
           
         </div>
@@ -29,12 +29,8 @@ export default () => (
             Work
           </h2>
           <div>
-            <div className='item'>
-              <img src={imgAmz} alt="Logo Amazon"/>
-            </div>
-            <div className='item'>
-              <img src={imgGtl} alt="Logo Gtl"/>
-            </div>
+            <Item imgUrl={imgAmz} alt="Logo Amazon" />
+            <Item imgUrl={imgGtl} alt="Logo Gtl" />
           </div>
         </div>
       </article>
