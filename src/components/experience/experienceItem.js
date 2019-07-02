@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactModal from 'react-modal';
-import { FaCalendarAlt, FaMapMarker, FaAngleRight } from 'react-icons/fa';
+import { FaCalendarAlt, FaMapMarker, FaAngleRight, FaTimes } from 'react-icons/fa';
 
 import './experienceItem.scss';
 
@@ -42,6 +42,7 @@ export default class extends React.Component {
           overlayClassName="Overlay"
         >
           <img src={model.image} alt={model.alt} />
+          <FaTimes className='closeBtn' onClick={this.handleCloseModal}/>
           {this.title(model)}
           <div className='detail'><FaCalendarAlt/>{model.period}</div>
           {model.location ? <div className='detail'><FaMapMarker/>{model.location}</div> : null}

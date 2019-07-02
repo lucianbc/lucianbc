@@ -30,6 +30,14 @@ $background: #272941;
   &:focus {
     outline: none;
   }
+  .closeBtn {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    width: 40px;
+    height: auto;
+    cursor: pointer;
+  }
   >img {
     width: $imgSize;
     border-radius: 100%;
