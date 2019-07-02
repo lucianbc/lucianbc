@@ -60,7 +60,7 @@ const data = {
       alt: 'Logo Amazon',
       title: 'Software Developer Intern',
       vendor: 'Amazon EU',
-      period: 'October 2016 - September 2019',
+      period: 'July 2018 - December 2018',
       location: 'Luxembourg',
       bullets: [
         "Used Python to automate some parts of a data migration, which sped it up by more than a month.",
@@ -74,7 +74,7 @@ const data = {
       alt: 'Logo Gtl',
       title: 'Junior Backend Developer',
       vendor: 'Gentlab',
-      period: 'October 2016 - September 2019',
+      period: 'March 2017 - March 2018',
       location: 'Bucharest',
       bullets: [
         "Worked on an e-learning platform as a part time backend developer for 20 to 25 hours a week",
