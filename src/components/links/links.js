@@ -5,10 +5,10 @@ import './links.scss'
 import gh from '../../assets/Octicons-mark-github.svg'
 import lin from '../../assets/linkedin-logo.svg'
 
-export default () => (
+export default ({ color='#000'} ) => (
   <div className="links">
-    <IconLink to='https://github.com/lucianbc' color='#000' alt='GitHub' icon={gh} id="gitHub"/>
-    <IconLink to='https://www.linkedin.com/in/lucianbc' color = '#000' alt='LinkedIn' icon={lin} id="linkedIn"/>
+    <IconLink to='https://github.com/lucianbc' color={color} alt='GitHub' icon={gh} id="gitHub"/>
+    <IconLink to='https://www.linkedin.com/in/lucianbc' color={color} alt='LinkedIn' icon={lin} id="linkedIn"/>
   </div>
 )
 

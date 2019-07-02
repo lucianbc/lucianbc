@@ -1,7 +1,5 @@
 import React from "react"
 
-import Layout from "../layouts/layout"
-
 const NotFoundPage = () => (
   <>
     <h1>NOT FOUND</h1>

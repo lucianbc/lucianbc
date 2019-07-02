@@ -31,11 +31,6 @@ const Layout = ({ children }) => {
       <SEO title={data.site.siteMetadata.title} />
       <Header siteTitle={data.site.siteMetadata.title} />
       <div id="main">{children}</div>
-      <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
     </>
   )
 }

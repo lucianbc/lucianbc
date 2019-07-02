@@ -9,7 +9,7 @@ import imgAmz from "../../assets/logo-amazon-square.jpg"
 import Item from "./experienceItem"
 
 export default () => (
-  <section id="experience">
+  <section id="experience" className='accent-background'>
     <div className='container columns'>
       <article className='column'>
         <div>

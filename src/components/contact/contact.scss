@@ -1,0 +1,26 @@
+#contact {
+
+  padding-top: 20px;
+  padding-bottom: 50px;
+
+  >div {
+    display: flex;
+    flex-direction: column;
+  }
+  h2+p {
+    margin-top: 0;
+  }
+
+  img {
+    filter: invert(1)
+  }
+
+  .media-btn {
+    width: 100px;
+    height: 100px;
+  }
+
+  a {
+    color: white;
+  }
+}
