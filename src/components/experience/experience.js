@@ -78,8 +78,8 @@ const data = {
       location: 'Bucharest',
       bullets: [
         "Worked on an e-learning platform as a part time backend developer for 20 to 25 hours a week",
-        "Implemented the quiz feature with support for random quizzes for each user and import from external sources.",
-        "Implemented a service to magange conferences and live streaming sessions",
+        "Implemented a quiz feature with support for random quizzes for each user and import from external sources.",
+        "Implemented a service to manage conferences and live streaming sessions",
         "Worked mainly with Java and Spring, but I also used Elastic Search and React. Here I also got familiar with Docker."
       ]
     }
