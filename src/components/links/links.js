@@ -2,8 +2,8 @@ import React from 'react';
 
 import './links.scss'
 
-import gh from '../assets/Octicons-mark-github.svg'
-import lin from '../assets/linkedin-logo.svg'
+import gh from '../../assets/Octicons-mark-github.svg'
+import lin from '../../assets/linkedin-logo.svg'
 
 export default () => (
   <div className="links">

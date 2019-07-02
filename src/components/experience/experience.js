@@ -2,9 +2,9 @@ import React from 'react';
 
 import "./experience.scss"
 
-import imgUb from "../assets/unibuc.png"
-import imgGtl from "../assets/gtl.jpeg"
-import imgAmz from "../assets/logo-amazon-square.jpg"
+import imgUb from "../../assets/unibuc.png"
+import imgGtl from "../../assets/gtl.jpeg"
+import imgAmz from "../../assets/logo-amazon-square.jpg"
 
 import Item from "./experienceItem"
 

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import ReactModal from 'react-modal';
 import { FaCalendarAlt, FaMapMarker, FaAngleRight } from 'react-icons/fa';
 

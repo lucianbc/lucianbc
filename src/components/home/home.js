@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Links from './links';
+import Links from '../links/links';
 
-import coderImg from '../assets/undraw_coding_6mjf.svg';
+import coderImg from '../../assets/undraw_coding_6mjf.svg';
 import './home.scss';
 
 export default () => (
