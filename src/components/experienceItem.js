@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactModal from 'react-modal';
+import { FaCalendarAlt, FaMapMarker, FaAngleRight } from 'react-icons/fa';
 
 import './experienceItem.scss';
 
@@ -28,11 +29,11 @@ export default class extends React.Component {
   }
 
   render() {
-    const {imgUrl, alt} = this.props;
+    const { model } = this.props;
 
     return (
       <div className='item'>
-        <img src={imgUrl} alt={alt} onClick={this.handleOpenModal}/>
+        <img src={model.image} alt={model.alt} onClick={this.handleOpenModal}/>
         <ReactModal 
           isOpen={this.state.showModal}
           contentLabel="onRequestClose Example"
@@ -40,9 +41,23 @@ export default class extends React.Component {
           className="Modal"
           overlayClassName="Overlay"
         >
-          <p>Modal here</p>
+          <img src={model.image} alt={model.alt} />
+          {this.title(model)}
+          <div className='detail'><FaCalendarAlt/>{model.period}</div>
+          {model.location ? <div className='detail'><FaMapMarker/>{model.location}</div> : null}
+          <div className='bullets'>
+            {model.bullets.map((el, ix) => <div className='detail' key={ix}><FaAngleRight/><span dangerouslySetInnerHTML={{__html: el}}></span></div>)}
+          </div>
         </ReactModal>
       </div>
     );
+  }
+
+  title(model) {
+    if (model.title) {
+      return <h3>{model.title}  <br/>@<br/> {model.vendor}</h3>
+    } else {
+      return <h3>{model.vendor}</h3>
+    }
   }
 }

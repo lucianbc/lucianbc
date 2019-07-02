@@ -1,6 +1,9 @@
+$imgSize: 130px;
+$background: #272941;
+
 .item {
-  width: 130px;
-  height: 130px;
+  width: $imgSize;
+  height: $imgSize;
   cursor: pointer;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 100%;
@@ -9,19 +12,69 @@
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
     transform: scale(1.05);
   }
-  img {
+  >img {
     width: 100%;
     border-radius: 100%;
   }
 }
 
 .Modal {
+  color: white;
   position: absolute;
-  top: 40px;
-  left: 40px;
-  right: 40px;
-  bottom: 40px;
-  background-color: papayawhip;
+  width: 90%;
+  max-width: 700px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $background;
+  border-radius: 20px;
+  padding: 20px;
+  padding-top: 0;
+  padding-bottom: $imgSize / 2 + 20;
+  box-sizing: border-box;
+  text-align: center;
+  &:focus {
+    outline: none;
+  }
+  >img {
+    width: $imgSize;
+    border-radius: 100%;
+    border: 5px solid $background;
+    position: absolute;
+    transform: translate(-50%, -50%)
+  }
+  h3 {
+    margin-top: $imgSize / 2 + 20;
+  }
+  ul {
+    list-style-position: inside;
+    padding-left: 0;
+  }
+  >.detail {
+    margin-bottom: 8px; 
+  }
+  .detail {
+    svg {
+      position: relative;
+      top: 2px;
+      left: -10px;
+    }
+    a, a:active, a:visited {
+      color: inherit;
+    }
+  }
+  .bullets {
+    margin-top: 10px;
+    * {
+      margin-bottom: 3px;
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+    svg {
+      top: 5px;
+    }
+  }
 }
 
 .Overlay {
@@ -30,5 +83,5 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rebeccapurple;
+  background-color: rgba(0, 0, 0, .5);
 }
