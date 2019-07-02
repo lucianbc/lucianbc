@@ -50,7 +50,7 @@ const data = {
       period: 'October 2016 - September 2019',
       bullets: [
         "Took a wide spectrum of courses, ranging from Math and abstract Computer Science to more applied Software Engineering",
-        "Applied the theoretical knowledge on <a href='https://github.com/lucianbc?utf8=%E2%9C%93&tab=repositories&q=%23university&type=&language=' target='_blank'><b>projects</b></a> on different subjects and involving different technologies"
+        "Applied the theoretical knowledge on <a href='https://github.com/lucianbc?utf8=%E2%9C%93&tab=repositories&q=%23university&type=&language=' target='_blank' rel='noopener noreferrer'><b>projects</b></a> on different subjects and involving different technologies"
       ]
     }
   ],

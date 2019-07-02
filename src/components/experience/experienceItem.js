@@ -32,7 +32,7 @@ export default class extends React.Component {
     const { model } = this.props;
 
     return (
-      <div className='item'>
+      <div className='item elevatable'>
         <img src={model.image} alt={model.alt} onClick={this.handleOpenModal}/>
         <ReactModal 
           isOpen={this.state.showModal}
