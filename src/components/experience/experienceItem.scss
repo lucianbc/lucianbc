@@ -6,7 +6,7 @@ $background: #272941;
   height: $imgSize;
   cursor: pointer;
   border-radius: 100%;
-  >img {
+  >*>.itmImage {
     width: 100%;
     border-radius: 100%;
   }
@@ -38,11 +38,12 @@ $background: #272941;
     height: auto;
     cursor: pointer;
   }
-  >img {
+  >.itmImage {
     width: $imgSize;
     border-radius: 100%;
     border: 5px solid $background;
-    position: absolute;
+    position: absolute !important;
+    left: 50%;
     transform: translate(-50%, -50%)
   }
   h3 {

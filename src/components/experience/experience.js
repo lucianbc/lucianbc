@@ -1,4 +1,5 @@
 import React from 'react';
+import { useStaticQuery, graphql } from "gatsby"
 
 import "./experience.scss"
 
@@ -8,43 +9,74 @@ import imgAmz from "../../assets/logo-amazon-square.jpg"
 
 import Item from "./experienceItem"
 
-export default () => (
-  <section id="experience" className='accent-background'>
-    <div className='container columns'>
-      <article className='column'>
-        <div>
-          <h2 className='text-2'>
-            Education
-          </h2>
+export default () => {
+  const images = useStaticQuery(graphql`
+    query {
+      amzImg: file(relativePath: { eq: "logo-amazon-square.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 130) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      },
+      gtlImg: file(relativePath: { eq: "gtl.jpeg" }) {
+        childImageSharp {
+          fluid(maxWidth: 130) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      },
+      unibucImg: file(relativePath: { eq: "unibuc.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 130) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+  
+  const data = _data(images)
 
+  return (
+    <section id="experience" className='accent-background'>
+      <div className='container columns'>
+        <article className='column'>
           <div>
-            { 
-              data.education.map((value, index) => <Item model={value} key={index}/>) 
-            }
-          </div>
-        </div>
-      </article>
-      <article className='column'>
-        <div>
-          <h2 className='text-2'>
-            Work
-          </h2>
-          <div>
-            {
-              data.work.map((value, index) => <Item model={value} key={index}/>)
-            }
-          </div>
-        </div>
-      </article>
-    </div>
-  </section>
-)
+            <h2 className='text-2'>
+              Education
+            </h2>
 
-const data = {
+            <div>
+              { 
+                data.education.map((value, index) => <Item model={value} key={index}/>) 
+              }
+            </div>
+          </div>
+        </article>
+        <article className='column'>
+          <div>
+            <h2 className='text-2'>
+              Work
+            </h2>
+            <div>
+              {
+                data.work.map((value, index) => <Item model={value} key={index}/>)
+              }
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  )
+}
+
+const _data = (images) => ({
   education: [
     {
       image: imgUb,
       alt: 'Logo Unibuc',
+      optImg: images['unibucImg'],
       title: 'BSc. Computer Science',
       vendor: 'University of Bucharest',
       period: 'October 2016 - September 2019',
@@ -58,6 +90,7 @@ const data = {
     {
       image: imgAmz,
       alt: 'Logo Amazon',
+      optImg: images['amzImg'],
       title: 'Software Developer Intern',
       vendor: 'Amazon EU',
       period: 'July 2018 - December 2018',
@@ -72,6 +105,7 @@ const data = {
     {
       image: imgGtl,
       alt: 'Logo Gtl',
+      optImg: images['gtlImg'],
       title: 'Junior Backend Developer',
       vendor: 'Gentlab',
       period: 'March 2017 - March 2018',
@@ -84,4 +118,4 @@ const data = {
       ]
     }
   ]
-}
+})

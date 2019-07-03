@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactModal from 'react-modal';
 import { FaCalendarAlt, FaMapMarker, FaAngleRight, FaTimes } from 'react-icons/fa';
+import Img from "gatsby-image"
 
 import './experienceItem.scss';
 
@@ -30,10 +31,18 @@ export default class extends React.Component {
 
   render() {
     const { model } = this.props;
-
+    // debugger;
     return (
       <div className='item elevatable'>
-        <img src={model.image} alt={model.alt} onClick={this.handleOpenModal}/>
+        <span onClick={this.handleOpenModal}>
+          <Img 
+            fluid={model.optImg.childImageSharp.fluid} 
+            alt={model.alt}
+            className='itmImage' 
+          />
+        </span>
+        
+
         <ReactModal 
           isOpen={this.state.showModal}
           contentLabel="onRequestClose Example"
@@ -41,7 +50,12 @@ export default class extends React.Component {
           className="Modal"
           overlayClassName="Overlay"
         >
-          <img src={model.image} alt={model.alt} />
+          {/* <img src={model.image} alt={model.alt} /> */}
+          <Img 
+            fluid={model.optImg.childImageSharp.fluid} 
+            alt={model.alt}
+            className='itmImage' 
+          />
           <FaTimes className='closeBtn' onClick={this.handleCloseModal}/>
           {this.title(model)}
           <div className='detail'><FaCalendarAlt/>{model.period}</div>
