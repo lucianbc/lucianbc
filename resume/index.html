@@ -16,8 +16,14 @@
       h1, h2, h3, h4 {
         font-family: 'Montserrat', sans-serif;
       }
+      h2, h3 {
+        margin-bottom: 0;
+      }
+      h2 + ul, h3 + ul {
+        margin-top: 2.5mm;
+      }
       a {
-        text-decoration: none;
+        text-decoration: underline;
         color: inherit;
       }
       body {
@@ -71,6 +77,11 @@
       div + section {
         position: relative;
         top: -4mm;
+      }
+
+      #education {
+        position: relative;
+        top: -7mm;
       }
 
       @media print {
@@ -215,9 +226,16 @@
               </ul>
             </article>
           </section>
+          <section>
+            <h2>Projects</h2>
+            <ul>
+              <li><a href="https://github.com/lucianbc/drop"><b>Drop</b></a> - Arduino game</li>
+              <li><a href="https://github.com/lucianbc/Compilers/tree/master/LexicalAnalysis"><b>Lexical Analysis</b></a> - A lexer for a subser of the C language</li>
+            </ul>
+          </section>
         </div>
       </div>
-      <section>
+      <section id="education">
           <h2>Education</h2>
           <article>
             <h3>
