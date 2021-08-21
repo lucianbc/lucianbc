@@ -1,20 +1,26 @@
 <html>
   <head>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600|Raleway:400,500,600&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600|Raleway:400,500,600&display=swap"
+      rel="stylesheet"
+    />
     <style>
       .page {
         width: 21cm;
         height: 29.7cm;
-        padding: 10mm 12mm;
+        padding: 8mm 10mm;
         margin: auto;
         box-sizing: border-box;
         background-color: #fff;
         box-shadow: 0px 0px 64px -20px rgba(0, 0, 0, 0.75);
         color: #0f1d21;
-        font-family: 'Raleway', sans-serif;
+        font-family: "Raleway", sans-serif;
       }
-      h1, h2, h3, h4 {
-        font-family: 'Montserrat', sans-serif;
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Montserrat", sans-serif;
       }
       a {
         text-decoration: none;
@@ -44,33 +50,18 @@
         top: 2px;
       }
 
-      header + div {
-        display: flex;
-      }
-
-      header + div div:first-child {
-        flex: 2;
-      }
-
-      header + div div:nth-child(2) {
-        flex: 1;
-        padding-left: 10mm;
-      }
-
-      header + div div:nth-child(2) section {
-        position: relative;
-        left: 5mm;
-      }
-
       article h3,
       article h4 {
         display: flex;
         justify-content: space-between;
       }
 
-      div + section {
-        position: relative;
-        top: -4mm;
+      article h3 {
+        border-bottom: 1px solid black;
+      }
+
+      article li {
+        margin-bottom: 0.2rem;
       }
 
       @media print {
@@ -78,15 +69,40 @@
           padding: 0;
         }
       }
+
+      h2 {
+        margin-block-start: 0.5em;
+        margin-block-end: 0.5em;
+      }
+
+      h3 {
+        margin-block-start: 0.3em;
+        margin-block-end: 0.3em;
+      }
+
+      h4 {
+        margin-block-start: 0.2em;
+        margin-block-end: 0.3em;
+      }
+
+      h1 {
+        margin-block-end: 0.1em;
+      }
+
+      h4 + ul {
+        margin-block-start: 0.5em;
+      }
+
+      li {
+        text-align: justify;
+      }
     </style>
     <script src="https://kit.fontawesome.com/63f028ca8a.js"></script>
   </head>
   <body>
     <div class="page">
       <header>
-        <h1>
-          Lucian Boacă
-        </h1>
+        <h1>Lucian Boacă</h1>
         <nav>
           <ul class="fa-ul">
             <li>
@@ -122,126 +138,103 @@
           </ul>
         </nav>
       </header>
-      <div>
-        <div>
-          <section>
-            <h2>Work</h2>
-            <article>
-              <h3>
-                <span>Software Developer Intern</span> <span>Amazon EU</span>
-              </h3>
-              <h4>
-                <span>July 2018 - December 2018</span> <span>Luxembourg</span>
-              </h4>
-              <ul>
-                <li>
-                  Used Python to automate some parts of a data migration, which
-                  sped it up by more than a month.
-                </li>
-                <li>
-                  Developed a serverless application to watch a stream of
-                  millions of messages a day, helping the ops team with
-                  dashboards on traffic and errors.
-                </li>
-                <li>
-                  Worked on migrating and maintaining a data pipeline comprised
-                  of Redshift ETL jobs.
-                </li>
-                <li>
-                  Used various AWS services, including Lambda, SQS, SNS, Kinesis
-                  Firehose and further developed my Java and Python skills.
-                </li>
-              </ul>
-            </article>
-            <article>
-              <h3>
-                <span>Junior Backend Developer</span> <span>Gentlab</span>
-              </h3>
-              <h4>
-                <span>March 2017 - March 2018</span>
-                <span>Bucharest, Romania</span>
-              </h4>
-              <ul>
-                <li>
-                  Worked on an e-learning platform as a part time backend
-                  developer for 20 to 25 hours a week.
-                </li>
-                <li>
-                  Implemented a quiz feature with support for random quizzes for
-                  each user and import from external sources.
-                </li>
-                <li>
-                  Implemented a service to manage conferences and live streaming
-                  sessions
-                </li>
-                <li>
-                  Worked mainly with Java and Spring, but I also used Elastic
-                  Search and React. Here I also got familiar with Docker.
-                </li>
-              </ul>
-            </article>
-          </section>
-        </div>
-        <div>
-          <section>
-            <h2>Skills</h2>
-            <article>
-              <h3>Programming Languages</h3>
-              <ul>
-                <li>Java</li>
-                <li>Kotlin</li>
-                <li>JavaScript</li>
-                <li>Python</li>
-                <li>C++</li>
-              </ul>
-            </article>
-            <article>
-              <h3>Frameworks & Libraries</h3>
-              <ul>
-                <li>Spring Boot</li>
-                <li>React, Redux</li>
-                <li>Django</li>
-                <li>Keras, SkLearn</li>
-                <li>Android</li>
-              </ul>
-            </article>
-            <article>
-              <h3>Tools & Platforms</h3>
-              <ul>
-                <li>Git</li>
-                <li>AWS</li>
-                <li>Netlify</li>
-                <li>Travis CI</li>
-              </ul>
-            </article>
-          </section>
-        </div>
-      </div>
       <section>
-          <h2>Education</h2>
-          <article>
-            <h3>
-              <span>BSc. Computer Science</span>
-              <span>University of Bucharest</span>
-            </h3>
-            <h4>October 2016 - September 2019</h4>
-            <ul>
-              <li>
-                Took a wide spectrum of courses, ranging from Math and
-                abstract Computer Science to more applied Software
-                Engineering.
-              </li>
-              <li>
-                Applied the theoretical knowledge on projects on different
-                subjects and involving different technologies.
-              </li>
-              <li>
-                Notable courses: Machine Learning, Theory of Optimization,
-                Compilation Theory, Algorithms and Data Structures.
-              </li>
-            </ul>
-          </article>
-        </section>
+        <h2>Work</h2>
+        <article>
+          <h3>
+            <span>Senior Software Engineer</span> <span>Babylon Health</span>
+          </h3>
+          <h4><span>November 2020 - Present</span> <span>London</span></h4>
+          <ul>
+            <li>
+              Redesigned our generic UI screen flows handling, improving the type
+              safety and developer experience by leveraging the typescript
+              language services. I also implemented a utility to visualise these
+              flows.
+            </li>
+            <li>
+              Designed and implemented the typescript layer of our data fetching
+              infrastructure.
+            </li>
+          </ul>
+        </article>
+        <article>
+          <h3><span>Software Engineer</span> <span>Babylon Health</span></h3>
+          <h4>
+            <span>September 2019 - November 2020</span> <span>London</span>
+          </h4>
+          <ul>
+            <li>
+              Worked on multiple Scala microservices for a Data Catalog,
+              managing discovery and access to different datasets.
+            </li>
+            <li>
+              Implemented the UI for this Data Catalog using React, Redux,
+              Redux-Sagas.
+            </li>
+            <li>Transitioned to a React Native project in May 2020.</li>
+          </ul>
+        </article>
+        <article>
+          <h3><span>Software Developer Intern</span> <span>Amazon EU</span></h3>
+          <h4>
+            <span>July 2018 - December 2018</span> <span>Luxembourg</span>
+          </h4>
+          <ul>
+            <li>
+              Developed an interactive CLI to combine different
+              data sources with human input, which helped speed up migrating,
+              testing and deploying a new system for handling shipments by more
+              than a month.
+            </li>
+            <li>
+              Developed a serverless application to process a stream of millions
+              of messages a day related to warehouse management, alerting for
+              potential errors and aggregating these messages into an optimised
+              structure.
+            </li>
+          </ul>
+        </article>
+        <article>
+          <h3><span>Junior Backend Developer</span> <span>Gentlab</span></h3>
+          <h4>
+            <span>March 2017 - March 2018</span>
+            <span>Bucharest, Romania</span>
+          </h4>
+          <ul>
+            <li>
+              Worked part time for 20 to 25 hours per week during University.
+              Developed various features in a typical Spring Boot stack.
+            </li>
+          </ul>
+        </article>
+      </section>
+      <section>
+        <h2>Education</h2>
+        <article>
+          <h3>
+            <span>BSc. Computer Science</span>
+            <span>University of Bucharest</span>
+          </h3>
+          <h4>October 2016 - September 2019</h4>
+          <ul>
+            <li>Final grade: 9.16 out of 10</li>
+            <li>
+              For my final year project I built an Android App to scan receipts
+              and manage expenses, showcasing modern programming techniques such
+              as domain driven design, CLEAN architecture, reactive programming.
+            </li>
+          </ul>
+        </article>
+      </section>
+      <section>
+        <h2>Skills</h2>
+        <p>
+          <b>Programming Languages:</b> Java, Scala, Kotlin, JavaScript,
+          TypeScript
+        </p>
+        <p><b>Frameworks:</b> React, React Native, Spring Boot, Akka, RxJava</p>
+      </section>
     </div>
   </body>
 </html>
