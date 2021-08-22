@@ -1,3 +1,3 @@
-import Experience from './experience'
+import Experience from './experienceUpdated'
 
 export default Experience

@@ -11,9 +11,9 @@ const IndexPage = () => (
   <Layout>
     <Home />
     <Blog />
-    {/* <Experience /> */}
     <Projects />
-    <Contact />
+    <Experience />
+    {/* <Contact /> */}
   </Layout>
 )
 
