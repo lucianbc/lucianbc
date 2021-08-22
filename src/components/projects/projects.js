@@ -9,9 +9,10 @@ export default () => (
       {
         projects.map((el, ix) => (
           <article className='column' key={ix}>
-            <a className='card elevatable' href={el.link} target="_blank" rel="noopener noreferrer">
+            <a className='card elevatable' href={el.link} target="_blank" rel="noopener noreferrer" style={{height: '100%'}}>
               <h3>{el.title}</h3>
               <p>{el.description}</p>
+              <p><b>Tech stack:</b> {el.techStack.join(', ')}</p>
             </a>
           </article>
         ))
@@ -25,13 +26,15 @@ export default () => (
 
 const projects = [
   {
-    title: 'Fairytale',
-    description: 'Blogging and creative writing with a touch of AI.    ',
-    link: 'https://github.com/lucianbc/fairytale'
+    title: 'ReceiptScan',
+    description: 'Android app that scans receipts and extracts the products and prices.',
+    link: 'https://github.com/lucianbc/ReceiptScan',
+    techStack: ['Jetpack Compose', 'RxJava', 'Room', 'Firebase OCR']
   },
   {
-    title: 'Drop',
-    description: 'Arduino falling ball game.',
-    link: 'https://github.com/lucianbc/drop'
+    title: 'Photos Portfolio',
+    description: 'My photography portfolio',
+    link: 'https://github.com/lucianbc/photo-portfolio',
+    techStack: ['React', 'Gatsby', 'Netlify']
   }
 ]
