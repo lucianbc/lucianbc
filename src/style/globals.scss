@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500|Raleway&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500|Raleway&display=swap");
 
 .container {
   width: 90%;
@@ -24,36 +24,42 @@
 
 html {
   font-size: 130%;
-  font-family:  'Raleway', sans-serif !important;
+  font-family: "Raleway", sans-serif !important;
 }
 
 .text-1 {
   font-size: 1.2rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .text-2 {
   font-size: 2rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 500;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
 }
 
 .elevatable {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  transition: all .2s;
+  transition: all 0.2s;
 
   &:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
+      0 12px 40px 0 rgba(0, 0, 0, 0.19);
     transform: scale(1.05);
   }
 }
 
 .accent-background {
-  background-color: #302C76;
+  background-color: #302c76;
   position: relative;
   color: white;
 
@@ -64,11 +70,30 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     right: 0;
     content: "";
-    background-color:rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.3);
     // mask: url('../assets/topography.svg');
-    mask: url('../assets/circuit-board.svg');
+    mask: url("../assets/circuit-board.svg");
   }
-  >* {
+  > * {
     position: relative;
+  }
+}
+
+.full-box {
+  overflow: auto;
+}
+
+.chip {
+  padding: 0.2rem 0.5rem;
+  box-sizing: border-box;
+  border: 1px solid white;
+  font-size: 0.8rem;
+  border-radius: 1rem;
+  margin-right: 10px;
+}
+
+h3 {
+  a {
+    color: inherit;
   }
 }

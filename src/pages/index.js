@@ -5,11 +5,13 @@ import Home from "../components/home"
 import Experience from "../components/experience"
 import Projects from "../components/projects"
 import Contact from "../components/contact"
+import Blog from "../components/blog"
 
 const IndexPage = () => (
   <Layout>
     <Home />
-    <Experience />
+    <Blog />
+    {/* <Experience /> */}
     <Projects />
     <Contact />
   </Layout>

@@ -15,7 +15,7 @@ class Header extends React.Component {
           <nav className='navbar-menu column'>
             <ul>
               <li><a href="#home" className='navbar-item'>Home</a></li>
-              <li><a href="#experience" className='navbar-item'>Experience</a></li>
+              <li><a href="#blog" className='navbar-item'>Blog</a></li>
               <li><a href="#projects" className='navbar-item'>Projects</a></li>
               <li><a href="#contact" className='navbar-item'>Contact</a></li>
             </ul>
