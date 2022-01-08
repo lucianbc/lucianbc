@@ -18,7 +18,15 @@
   "homepage": "https://github.com/lucianbc/lucianbc#readme",
   "dependencies": {
     "gatsby": "^4.4.0",
+    "gatsby-link": "^4.4.0",
+    "gatsby-react-router-scroll": "^5.4.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "gatsby-plugin-postcss": "^5.4.0",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.12"
   }
 }
