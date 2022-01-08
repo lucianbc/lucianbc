@@ -1,1 +1,0 @@
-{"version":3,"file":"component---src-pages-index-tsx.js","mappings":";;;;;;;;;;;;;;;;;AAAA;AAEe,SAASC,IAAT,GAAgB;AAC7B,sBAAO,uFAAP;AACD","sources":["webpack://lucianbc/./src/pages/index.tsx"],"sourcesContent":["import React from \"react\";\n\nexport default function Home() {\n  return <h1>Hello Gatsby!</h1>;\n}\n"],"names":["React","Home"],"sourceRoot":""}
