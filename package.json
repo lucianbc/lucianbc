@@ -1,44 +1,24 @@
 {
   "name": "lucianbc",
-  "private": true,
-  "description": "Personal website and portfolio.",
-  "version": "0.1.0",
-  "author": "Lucian Boaca <lucianboaca97@gmail.com>",
-  "dependencies": {
-    "gatsby": "^3.12.0",
-    "gatsby-image": "^3.11.0",
-    "gatsby-plugin-manifest": "^3.12.0",
-    "gatsby-plugin-offline": "^4.12.0",
-    "gatsby-plugin-react-helmet": "^4.12.0",
-    "gatsby-plugin-sass": "^4.12.0",
-    "gatsby-plugin-sharp": "^3.12.0",
-    "gatsby-source-filesystem": "^3.12.0",
-    "gatsby-transformer-sharp": "^3.12.0",
-    "node-sass": "^6.0.1",
-    "prop-types": "^15.7.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-helmet": "^6.1.0",
-    "react-icons": "^4.2.0",
-    "react-modal": "^3.14.3"
-  },
-  "devDependencies": {
-    "prettier": "^2.3.2"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
+  "version": "2.0.0",
+  "description": "Personal website and blog",
+  "main": "index.js",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lucianbc/lucianbc.github.io"
+    "url": "git+https://github.com/lucianbc/lucianbc.git"
+  },
+  "author": "lucianbc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucianbc/lucianbc/issues"
+  },
+  "homepage": "https://github.com/lucianbc/lucianbc#readme",
+  "dependencies": {
+    "gatsby": "^4.4.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }
