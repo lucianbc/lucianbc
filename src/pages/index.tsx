@@ -1,36 +1,56 @@
+import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 
 export default function Home() {
   return (
     <>
-      <Header />
       <Hero />
     </>
   );
 }
 
-const Header = () => {
-  return (
-    <header className="bg-teal-300 flex content-between justify-between">
-      <p>Lucian Boaca</p>
-      <div className="flex">
-        <p>Blog</p>
-        <p>Photography</p>
-        <p>Career</p>
-      </div>
-    </header>
-  );
+const links = {
+  twitter: "https://twitter.com/lucian_bc",
+  github: "https://github.com/lucianbc",
+  photography: "https://photos.lucianbc.com",
 };
+
+const A = (
+  props: JSX.IntrinsicAttributes &
+    React.ClassAttributes<HTMLAnchorElement> &
+    React.AnchorHTMLAttributes<HTMLAnchorElement>
+) => <a {...props} target="_blank" className="underline text-blue-600" />;
 
 const Hero = () => {
   return (
-    <section>
-      <p>Hi, I'm Lucian</p>
-      <p>
-        I am a software engineer, currently working on putting healthcare in the
-        hands of millions by writing React Native at Babylon Health
-      </p>
-      <p>This is my corner of the internet. All views are my own</p>
+    <section className="bg-teal-100">
+      <div className="container mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="items-center justify-center flex">
+            <StaticImage
+              src="../assets/Me.jpg"
+              alt={"Portrait Photo"}
+              className="rounded-full"
+              width={200}
+              height={200}
+            />
+          </div>
+          <div className="items-center justify-center flex">
+            <div className="text-center md:text-left">
+              <h1>Hi, I'm Lucian</h1>
+              <p>
+                I am a software engineer and I currently work as a React Native
+                developer at Babylon. Here I'm writing about all things coding.
+              </p>
+              <p>
+                Find me on <A href={links.github}>GitHub</A>,{" "}
+                <A href={links.twitter}>Twitter</A> or check out my{" "}
+                <A href={links.photography}>photography website</A>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
