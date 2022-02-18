@@ -1,10 +1,80 @@
-import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
+import { StaticImage } from "gatsby-plugin-image";
+import { graphql, Link } from "gatsby";
 
-export default function Home() {
+export const query = graphql`
+  query {
+    allFile(
+      filter: {
+        sourceInstanceName: { eq: "posts" }
+        internal: { mediaType: { eq: "text/markdown" } }
+      }
+      sort: { fields: childMarkdownRemark___fields___date, order: DESC }
+    ) {
+      nodes {
+        childMarkdownRemark {
+          frontmatter {
+            title
+          }
+          fields {
+            slug
+            date(formatString: "MMMM Do, YYYY")
+          }
+          excerpt
+          timeToRead
+        }
+      }
+    }
+  }
+`;
+
+type Data = {
+  allFile: {
+    nodes: {
+      childMarkdownRemark: {
+        frontmatter: {
+          title: string;
+        };
+        fields: {
+          slug: string;
+          date: string;
+        };
+        excerpt: string;
+        timeToRead: string;
+      };
+    }[];
+  };
+};
+
+const BlogPosts = ({ data }: { data: Data }) => {
+  return (
+    <main>
+      <div className="container mx-auto">
+        {React.Children.toArray(
+          data.allFile.nodes.map((node) => {
+            return (
+              <article>
+                <Link to={node.childMarkdownRemark.fields.slug}>
+                  <h2>{node.childMarkdownRemark.frontmatter.title}</h2>
+                </Link>
+                <small>
+                  {`${node.childMarkdownRemark.fields.date} • ${node.childMarkdownRemark.timeToRead} min read`}
+                </small>
+                <p>{node.childMarkdownRemark.excerpt}</p>
+              </article>
+            );
+          })
+        )}
+      </div>
+    </main>
+  );
+};
+
+export default function Home({ data }: { data: Data }) {
   return (
     <>
       <Hero />
+      <BlogPosts data={data} />
     </>
   );
 }
@@ -24,7 +94,7 @@ const A = (
 const Hero = () => {
   return (
     <section className="bg-teal-100">
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="items-center justify-center flex">
             <StaticImage
