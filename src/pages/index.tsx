@@ -1,7 +1,7 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { graphql, Link } from "gatsby";
-import { Layout, links } from "../components";
+import { ExternalLink, Layout, links } from "../components";
 
 export const query = graphql`
   query {
@@ -71,21 +71,6 @@ const BlogPosts = ({ data }: { data: Data }) => {
   );
 };
 
-export default function Home({ data }: { data: Data }) {
-  return (
-    <Layout>
-      <Hero />
-      <BlogPosts data={data} />
-    </Layout>
-  );
-}
-
-const A = (
-  props: JSX.IntrinsicAttributes &
-    React.ClassAttributes<HTMLAnchorElement> &
-    React.AnchorHTMLAttributes<HTMLAnchorElement>
-) => <a {...props} target="_blank" className="underline text-blue-600" />;
-
 const Hero = () => {
   return (
     <section className="bg-teal-100">
@@ -108,9 +93,14 @@ const Hero = () => {
                 developer at Babylon. Here I'm writing about all things coding.
               </p>
               <p>
-                Find me on <A href={links.github}>GitHub</A>,{" "}
-                <A href={links.twitter}>Twitter</A> or check out my{" "}
-                <A href={links.photography}>photography website</A>.
+                Find me on{" "}
+                <ExternalLink href={links.github}>GitHub</ExternalLink>,{" "}
+                <ExternalLink href={links.twitter}>Twitter</ExternalLink> or
+                check out my{" "}
+                <ExternalLink href={links.photography}>
+                  photography website
+                </ExternalLink>
+                .
               </p>
             </div>
           </div>
@@ -119,3 +109,12 @@ const Hero = () => {
     </section>
   );
 };
+
+export default function Home({ data }: { data: Data }) {
+  return (
+    <Layout>
+      <Hero />
+      <BlogPosts data={data} />
+    </Layout>
+  );
+}
