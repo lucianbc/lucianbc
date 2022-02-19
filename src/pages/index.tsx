@@ -1,6 +1,7 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { graphql, Link } from "gatsby";
+import { Layout, links } from "../components";
 
 export const query = graphql`
   query {
@@ -72,18 +73,12 @@ const BlogPosts = ({ data }: { data: Data }) => {
 
 export default function Home({ data }: { data: Data }) {
   return (
-    <>
+    <Layout>
       <Hero />
       <BlogPosts data={data} />
-    </>
+    </Layout>
   );
 }
-
-const links = {
-  twitter: "https://twitter.com/lucian_bc",
-  github: "https://github.com/lucianbc",
-  photography: "https://photos.lucianbc.com",
-};
 
 const A = (
   props: JSX.IntrinsicAttributes &

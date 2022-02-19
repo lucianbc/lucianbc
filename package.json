@@ -21,6 +21,7 @@
     "gatsby": "^4.4.0",
     "gatsby-link": "^4.4.0",
     "gatsby-plugin-image": "^2.7.0",
+    "gatsby-plugin-sass": "^5.7.0",
     "gatsby-plugin-sharp": "^4.7.0",
     "gatsby-react-router-scroll": "^5.4.0",
     "gatsby-remark-highlight-code": "^3.2.0",
