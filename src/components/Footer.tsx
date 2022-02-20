@@ -4,8 +4,8 @@ import { links } from ".";
 
 export const Footer = () => {
   return (
-    <footer className="border-t pt-12 pb-8">
-      <div className="container mx-auto flex flex-wrap">
+    <footer className="pt-12 pb-8">
+      <div className="container mx-auto flex flex-wrap mb-4">
         <section className="mr-8">
           <h3>Lucian Boaca</h3>
           <ul>

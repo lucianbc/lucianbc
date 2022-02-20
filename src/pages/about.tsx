@@ -4,7 +4,7 @@ import { ExternalLink, Layout, links } from "../components";
 const About = () => {
   return (
     <Layout>
-      <main className="container mx-auto">
+      <main className="container mx-auto mt-4 pt-1">
         <h1>About</h1>
         <p>
           I am a passionate Software Engineer based in London, with a strong
@@ -32,7 +32,7 @@ const About = () => {
 
         <p>
           In my spare time I am a photographer, cyclist, runner, reader or
-          probably I am doing even more coding.
+          probably I'm just coding.
         </p>
       </main>
     </Layout>

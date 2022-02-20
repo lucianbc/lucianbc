@@ -49,8 +49,8 @@ type Data = {
 
 const BlogPosts = ({ data }: { data: Data }) => {
   return (
-    <main>
-      <div className="container mx-auto">
+    <main className="py-8">
+      <div className="container mx-auto space-y-4">
         {React.Children.toArray(
           data.allFile.nodes.map((node) => {
             return (
@@ -73,7 +73,7 @@ const BlogPosts = ({ data }: { data: Data }) => {
 
 const Hero = () => {
   return (
-    <section className="bg-teal-100">
+    <section className="">
       <div className="container mx-auto py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="items-center justify-center flex">
@@ -88,20 +88,23 @@ const Hero = () => {
           <div className="items-center justify-center flex">
             <div className="text-center md:text-left">
               <h1>Hi, I'm Lucian</h1>
-              <p>
-                I am a software engineer and I currently work as a React Native
-                developer at Babylon. Here I'm writing about all things coding.
-              </p>
-              <p>
-                Find me on{" "}
-                <ExternalLink href={links.github}>GitHub</ExternalLink>,{" "}
-                <ExternalLink href={links.twitter}>Twitter</ExternalLink> or
-                check out my{" "}
-                <ExternalLink href={links.photography}>
-                  photography website
-                </ExternalLink>
-                .
-              </p>
+              <div className="text-sm">
+                <p className="leading-5 mb-2">
+                  I am a software engineer and I currently work as a React
+                  Native developer at Babylon. Here I'm writing about all things
+                  coding.
+                </p>
+                <p className="leading-5">
+                  Find me on{" "}
+                  <ExternalLink href={links.github}>GitHub</ExternalLink>,{" "}
+                  <ExternalLink href={links.twitter}>Twitter</ExternalLink> or
+                  check out my{" "}
+                  <ExternalLink href={links.photography}>
+                    photography website
+                  </ExternalLink>
+                  .
+                </p>
+              </div>
             </div>
           </div>
         </div>

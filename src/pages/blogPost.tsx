@@ -1,7 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
-import { Footer, Header, Layout } from "../components";
+import { Layout } from "../components";
+import "../styles/blog.scss";
 
 deckDeckGoHighlightElement();
 
@@ -21,26 +22,15 @@ export const query = graphql`
 `;
 
 const BlogPost = ({ data }) => {
-  // return (
-  //   <>
-  //     <Header />
-  //     <div className="container mx-auto">
-  //       <h1>{data.markdownRemark.frontmatter.title}</h1>
-  //       <p>
-  //         {`${data.markdownRemark.fields.date} • ${data.markdownRemark.timeToRead} min read`}
-  //       </p>
-  //       <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
-  //     </div>
-  //     <Footer />
-  //   </>
-  // );
   return (
     <Layout>
-      <div className="container mx-auto">
-        <h1>{data.markdownRemark.frontmatter.title}</h1>
-        <p>
-          {`${data.markdownRemark.fields.date} • ${data.markdownRemark.timeToRead} min read`}
-        </p>
+      <div className="container mx-auto mt-4 pt-1">
+        <div className="mb-8">
+          <h1>{data.markdownRemark.frontmatter.title}</h1>
+          <p>
+            {`${data.markdownRemark.fields.date} • ${data.markdownRemark.timeToRead} min read`}
+          </p>
+        </div>
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
       </div>
     </Layout>
