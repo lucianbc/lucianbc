@@ -70,6 +70,10 @@ article {
 
   h2 {
     line-height: 1rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 

@@ -49,7 +49,7 @@ type Data = {
 
 const BlogPosts = ({ data }: { data: Data }) => {
   return (
-    <main className="py-8">
+    <main className="pb-8">
       <div className="container mx-auto space-y-4">
         {React.Children.toArray(
           data.allFile.nodes.map((node) => {
