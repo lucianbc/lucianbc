@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="canonical" href="https://astro-paper.pages.dev/posts/dynamic-og-image-generation-in-astropaper-blog-posts/">
+    <meta name="generator" content="Astro v2.0.8">
+
+    <!-- General Meta Tags -->
+    <title>Dynamic OG image generation in AstroPaper blog posts</title>
+    <meta name="title" content="Dynamic OG image generation in AstroPaper blog posts">
+    <meta name="description" content="New feature in AstroPaper v1.4.0, introducing dynamic OG image generation for blog posts.">
+    <meta name="author" content="Sat Naing">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Dynamic OG image generation in AstroPaper blog posts">
+    <meta property="og:description" content="New feature in AstroPaper v1.4.0, introducing dynamic OG image generation for blog posts.">
+    <meta property="og:url" content="https://astro-paper.pages.dev/posts/dynamic-og-image-generation-in-astropaper-blog-posts/">
+    <meta property="og:image" content="https://astro-paper.pages.dev/Dynamic%20OG%20image%20generation%20in%20AstroPaper%20blog%20posts.svg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://astro-paper.pages.dev/posts/dynamic-og-image-generation-in-astropaper-blog-posts/">
+    <meta property="twitter:title" content="Dynamic OG image generation in AstroPaper blog posts">
+    <meta property="twitter:description" content="New feature in AstroPaper v1.4.0, introducing dynamic OG image generation for blog posts.">
+    <meta property="twitter:image" content="https://astro-paper.pages.dev/astropaper-og.jpg">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+    
+
+    <script src="/toggle-theme.js"></script>
+  <link rel="stylesheet" href="/_astro/about.ab7cd90b.css" />
+<link rel="stylesheet" href="/_astro/about.9dee87f4.css" />
+<link rel="stylesheet" href="/_astro/_slug_.faea2550.css" />
+<link rel="stylesheet" href="/_astro/_slug_.77dedcfe.css" />
+<link rel="stylesheet" href="/_astro/_slug_.5d5f7e01.css" />
+<link rel="stylesheet" href="/_astro/_slug_.d833ca2a.css" /><script type="module">const e=document.querySelector(".hamburger-menu"),n=document.querySelector("#menu-items")?.classList,t=document.querySelector(".icon-container")?.classList,o=document.querySelector("#first-line")?.classList,a=document.querySelector("#second-line ")?.classList,s=document.querySelector("#third-line")?.classList;e?.addEventListener("click",function(){e?.getAttribute("aria-expanded")==="false"?(e?.setAttribute("aria-expanded","true"),e?.setAttribute("aria-label","Close Menu"),n?.remove("display-none"),t?.remove("flex"),t?.add("relative"),o?.add("rotate-45","absolute","bottom-1/2"),s?.add("display-none"),a?.add("!w-full","-rotate-45","absolute","bottom-1/2")):(e?.setAttribute("aria-expanded","false"),e?.setAttribute("aria-label","Open Menu"),n?.add("display-none"),t?.add("flex"),t?.remove("relative"),o?.remove("rotate-45","absolute","bottom-1/2"),s?.remove("display-none"),a?.remove("!w-full","-rotate-45","absolute","bottom-1/2"))});
+</script></head>
+  <body>
+    <header class="astro-3EF6KSR2">
+  <a id="skip-to-content" href="#main-content" class="astro-3EF6KSR2">Skip to content</a>
+  <div class="nav-container astro-3EF6KSR2">
+    <div class="top-nav-wrap astro-3EF6KSR2">
+      <a href="/" class="logo astro-3EF6KSR2">
+        AstroPaper
+      </a>
+      <nav id="nav-menu" class="astro-3EF6KSR2">
+        <button class="hamburger-menu focus-outline astro-3EF6KSR2" aria-label="Open Menu" aria-expanded="false" aria-controls="menu-items">
+          <div class="icon-container flex astro-3EF6KSR2">
+            <div id="first-line" class="astro-3EF6KSR2"></div>
+            <div id="second-line" class="astro-3EF6KSR2"></div>
+            <div id="third-line" class="astro-3EF6KSR2"></div>
+          </div>
+        </button>
+        <ul id="menu-items" class="display-none sm:flex astro-3EF6KSR2">
+          <li class="astro-3EF6KSR2">
+            <a href="/posts" class=" astro-3EF6KSR2">
+              Posts
+            </a>
+          </li>
+          <li class="astro-3EF6KSR2">
+            <a href="/tags" class=" astro-3EF6KSR2">
+              Tags
+            </a>
+          </li>
+          <li class="astro-3EF6KSR2">
+            <a href="/about" class=" astro-3EF6KSR2">
+              About
+            </a>
+          </li>
+          <li class="astro-3EF6KSR2">
+            <a type="button" href="/search" tabindex="0" class="group focus-outline p-3 sm:p-1  astro-3EF6KSR2 astro-5EUNQZKT" aria-label="search" title="Search">
+  <svg xmlns="http://www.w3.org/2000/svg" class="scale-125 sm:scale-100 astro-3EF6KSR2"><path d="M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392.604.646 2.121-2.121-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z" class="astro-3EF6KSR2"></path>
+              </svg>
+</a>
+          </li>
+          <li class="astro-3EF6KSR2">
+            <button id="theme-btn" class="focus-outline astro-3EF6KSR2" title="Toggles light & dark" aria-label="auto" aria-live="polite">
+                  <svg xmlns="http://www.w3.org/2000/svg" id="moon-svg" class="astro-3EF6KSR2">
+                    <path d="M20.742 13.045a8.088 8.088 0 0 1-2.077.271c-2.135 0-4.14-.83-5.646-2.336a8.025 8.025 0 0 1-2.064-7.723A1 1 0 0 0 9.73 2.034a10.014 10.014 0 0 0-4.489 2.582c-3.898 3.898-3.898 10.243 0 14.143a9.937 9.937 0 0 0 7.072 2.93 9.93 9.93 0 0 0 7.07-2.929 10.007 10.007 0 0 0 2.583-4.491 1.001 1.001 0 0 0-1.224-1.224zm-2.772 4.301a7.947 7.947 0 0 1-5.656 2.343 7.953 7.953 0 0 1-5.658-2.344c-3.118-3.119-3.118-8.195 0-11.314a7.923 7.923 0 0 1 2.06-1.483 10.027 10.027 0 0 0 2.89 7.848 9.972 9.972 0 0 0 7.848 2.891 8.036 8.036 0 0 1-1.484 2.059z" class="astro-3EF6KSR2"></path>
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" id="sun-svg" class="astro-3EF6KSR2">
+                    <path d="M6.993 12c0 2.761 2.246 5.007 5.007 5.007s5.007-2.246 5.007-5.007S14.761 6.993 12 6.993 6.993 9.239 6.993 12zM12 8.993c1.658 0 3.007 1.349 3.007 3.007S13.658 15.007 12 15.007 8.993 13.658 8.993 12 10.342 8.993 12 8.993zM10.998 19h2v3h-2zm0-17h2v3h-2zm-9 9h3v2h-3zm17 0h3v2h-3zM4.219 18.363l2.12-2.122 1.415 1.414-2.12 2.122zM16.24 6.344l2.122-2.122 1.414 1.414-2.122 2.122zM6.342 7.759 4.22 5.637l1.415-1.414 2.12 2.122zm13.434 10.605-1.414 1.414-2.122-2.122 1.414-1.414z" class="astro-3EF6KSR2"></path>
+                  </svg>
+                </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="max-w-3xl mx-auto px-4">
+  <hr class="border-skin-line" aria-hidden="true">
+</div>
+</header><div class="mx-auto flex w-full max-w-3xl justify-start px-2 astro-VJ4TPSPI">
+    <button class="focus-outline mt-8 mb-2 flex hover:opacity-75 astro-VJ4TPSPI" onclick="history.back()">
+      <svg xmlns="http://www.w3.org/2000/svg" class="astro-VJ4TPSPI"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z" class="astro-VJ4TPSPI"></path>
+      </svg><span class="astro-VJ4TPSPI">Go back</span>
+    </button>
+  </div><main id="main-content" class="astro-VJ4TPSPI">
+    <h1 class="post-title astro-VJ4TPSPI">Dynamic OG image generation in AstroPaper blog posts</h1>
+    <div class="flex items-center space-x-2 opacity-80 my-2 astro-VJ4TPSPI"><svg xmlns="http://www.w3.org/2000/svg" class="scale-100 inline-block h-6 w-6 fill-skin-base" aria-hidden="true"><path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path><path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path></svg><span class="sr-only">Posted on:</span><span class="italic text-base">December 28, 2022<span aria-hidden="true"> | </span><span class="sr-only"> at </span>04:59 AM</span></div>
+    <article id="article" role="article" class="prose mx-auto mt-8 max-w-3xl astro-VJ4TPSPI">
+      <p>New feature in AstroPaper v1.4.0, introducing dynamic OG image generation for blog posts.</p>
+<h2 id="table-of-contents">Table of contents</h2>
+<p></p><details><summary>Open Table of contents</summary><p></p>
+<ul>
+<li><a href="#intro">Intro</a></li>
+<li><a href="#defaultstatic-og-image-the-old-way">Default/Static OG image (the old way)</a></li>
+<li><a href="#dynamic-og-image">Dynamic OG Image</a></li>
+<li><a href="#anatomy-of-astropaper-dynamic-og-image">Anatomy of AstroPaper dynamic OG image</a></li>
+<li><a href="#limitations">Limitations</a></li>
+</ul>
+<p></p></details><p></p>
+<h2 id="intro">Intro</h2>
+<p>OG images (aka Social Images) play an important role in social media engagements. In case you don’t know what OG image means, it is an image displayed whenever we share our website URL on social media such as Facebook, Discord etc.</p>
+<blockquote>
+<p>The Social Image used for Twitter is technically not called OG image. However, in this post, I’ll be using the term OG image for all types of Social Images.</p>
+</blockquote>
+<h2 id="defaultstatic-og-image-the-old-way">Default/Static OG image (the old way)</h2>
+<p>AstroPaper already provided a way to add an OG image to a blog post. The author can specify the OG image in the frontmatter <code>ogImage</code>. Even when the author doesn’t define the OG image in the frontmatter, the default OG image will be used as a fallback (in this case <code>public/astropaper-og.jpg</code>). But the problem is that the default OG image is static, which means every blog post that does not include an OG image in the frontmatter will always use the same default OG image despite each post title/content being different from others.</p>
+<h2 id="dynamic-og-image">Dynamic OG Image</h2>
+<p>Generating a dynamic OG image for each post allows the author to avoid specifying an OG image for every single blog post. Besides, this will prevent the fallback OG image from being identical to all blog posts.</p>
+<p>In AstroPaper v1.4.0, Vercel’s <a href="https://github.com/vercel/satori">Satori</a> package is used for dynamic OG image generation.</p>
+<p>Dynamic OG images will be generated at build time for blog posts that</p>
+<ul>
+<li>don’t include OG image in the frontmatter</li>
+<li>are not marked as draft.</li>
+</ul>
+<h2 id="anatomy-of-astropaper-dynamic-og-image">Anatomy of AstroPaper dynamic OG image</h2>
+<p>Dynamic OG image of AstroPaper includes <em>the blog post title</em>, <em>author name</em> and <em>site title</em>. Author name and site title will be retrieved via <code>SITE.author</code> and <code>SITE.title</code> of <strong>“src/config.ts”</strong> file. The title is generated from the blog post frontmatter <code>title</code>.<br>
+<img src="https://user-images.githubusercontent.com/53733092/209704501-e9c2236a-3f4d-4c67-bab3-025aebd63382.png" alt="Example Dynamic OG Image link"></p>
+<h2 id="limitations">Limitations</h2>
+<p>At the time of writing this, <a href="https://github.com/vercel/satori">Satori</a> is fairly new and has not reached major release yet. So, there are still some limitations to this dynamic OG image feature.</p>
+<ul>
+<li>If you have Blog posts with non-English titles, you have to set <code>embedFonts</code> option to <code>false</code> (file: <code>src/utils/generateOgImage.tsx</code>). Even after this, the OG image might not be displayed very well.</li>
+<li>Besides, RTL languages are not supported yet.</li>
+<li><a href="https://github.com/vercel/satori#emojis">Using emoji</a> in the title might be a little bit tricky.</li>
+<li>Sadly, this new dynamic OG image generation feature cannot be used for Twitter social images since <code>svg</code> image type is not supported for Twitter Cards.</li>
+</ul>
+    </article>
+
+    <ul class="tags-container astro-VJ4TPSPI">
+      <li class="inline-block my-1 underline-offset-4 astro-BLWJYJPT">
+  <a href="/tags/docs" class="text-sm pr-2 group astro-BLWJYJPT">
+    <svg xmlns="http://www.w3.org/2000/svg" class=" scale-75 astro-BLWJYJPT"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" class="astro-BLWJYJPT"></path>
+    </svg>
+    &nbsp;<span class="astro-BLWJYJPT">docs</span>
+  </a>
+</li><li class="inline-block my-1 underline-offset-4 astro-BLWJYJPT">
+  <a href="/tags/release" class="text-sm pr-2 group astro-BLWJYJPT">
+    <svg xmlns="http://www.w3.org/2000/svg" class=" scale-75 astro-BLWJYJPT"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" class="astro-BLWJYJPT"></path>
+    </svg>
+    &nbsp;<span class="astro-BLWJYJPT">release</span>
+  </a>
+</li>
+    </ul>
+  </main><footer class="mt-auto astro-SZ7XMLTE">
+  <div class="max-w-3xl mx-auto px-0">
+  <hr class="border-skin-line" aria-hidden="true">
+</div>
+  <div class="footer-wrapper astro-SZ7XMLTE">
+    <div class="social-icons flex astro-UPU6FZXR">
+  <a type="button" href="https://github.com/satnaing/astro-paper" tabindex="0" class="group link-button astro-UPU6FZXR astro-5EUNQZKT" title=" AstroPaper on Github">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="icon-tabler"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+    <path
+      d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+    ></path>
+  </svg>
+</a><a type="button" href="https://github.com/satnaing/astro-paper" tabindex="0" class="group link-button astro-UPU6FZXR astro-5EUNQZKT" title="AstroPaper on Facebook">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="icon-tabler"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+    <path
+      d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"
+    ></path>
+  </svg>
+</a><a type="button" href="https://github.com/satnaing/astro-paper" tabindex="0" class="group link-button astro-UPU6FZXR astro-5EUNQZKT" title="AstroPaper on Instagram">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="icon-tabler"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+    <rect x="4" y="4" width="16" height="16" rx="4"></rect>
+    <circle cx="12" cy="12" r="3"></circle>
+    <line x1="16.5" y1="7.5" x2="16.5" y2="7.501"></line>
+  </svg>
+</a><a type="button" href="https://github.com/satnaing/astro-paper" tabindex="0" class="group link-button astro-UPU6FZXR astro-5EUNQZKT" title="AstroPaper on LinkedIn">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="icon-tabler"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+    <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+    <line x1="8" y1="11" x2="8" y2="16"></line>
+    <line x1="8" y1="8" x2="8" y2="8.01"></line>
+    <line x1="12" y1="16" x2="12" y2="11"></line>
+    <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+  </svg>
+</a>
+</div>
+    <div class="copyright-wrapper astro-SZ7XMLTE">
+      <span class="astro-SZ7XMLTE">Copyright &#169; 2023</span>
+      <span class="separator astro-SZ7XMLTE">&nbsp;|&nbsp;</span>
+      <span class="astro-SZ7XMLTE">All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+  </body></html>
